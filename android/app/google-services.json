@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "501406587751",
+    "project_id": "logistic-e428c",
+    "storage_bucket": "logistic-e428c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:501406587751:android:25e93ccf5f7bdf7fa42dc2",
+        "android_client_info": {
+          "package_name": "com.example.logistic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "501406587751-f46akarqnsjm9rii7otqcm16jk6b98l7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.logistic",
+            "certificate_hash": "2dc23c7c0bc3408a4aa043bdc499f6166a61c0dc"
+          }
+        },
+        {
+          "client_id": "501406587751-9vfj3jssdtm1fk185avr9l3g4hbp0dap.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7oS4HiPC2_UbtOTam49ERkUKr70DwA6U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "501406587751-9vfj3jssdtm1fk185avr9l3g4hbp0dap.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "501406587751-0lv8r3u5dp29usrdtq3jsvhhomudj2g6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.logistic"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
