@@ -1,37 +1,28 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:logistic/common/network_manager.dart';
 import 'package:logistic/common/t_fullscreen_loader.dart';
 import 'package:logistic/common/t_loaders.dart';
 import 'package:logistic/features/screens/MyNavigator.dart';
-import 'package:logistic/features/screens/authorizations/SignUpScreen/verify_email_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-class SignupController extends GetxController{
+
+class SignupController extends GetxController {
   static SignupController get instance => Get.find();
 
-  ///variables
-  final emailController = TextEditingController();
-  final lastNameController = TextEditingController();
+  /// Text Controllers
   final firstNameController = TextEditingController();
+  final lastNameController = TextEditingController();
   final userNameController = TextEditingController();
-  final phoneNumberController = TextEditingController();
+  final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final hidePasswordController = true.obs;
-  final privacyPolicyController = true.obs;
-  GlobalKey<FormState> signupFormKey = GlobalKey<FormState>();
+  final phoneNumberController = TextEditingController();
 
+  /// Observables
+  final hidePassword = true.obs;
+  final privacyPolicy = true.obs;
 
-  // ///Check Internet Connectivity
-  // final isConnected = await NetworkManager.instance.isConnected();
-  // if(!isConnected)  return;
-  // ///Privacy Policy Check
-  // // if(!privacyPolicyController.value){
-  // //   TLoaders.warningSnackBar(title: 'Accept Privacy Policy',
-  // //     message: 'In order to create account, you must have to read and accept the privacy policy'
-  // //   );
-  // //   return;
-  // // }
+  /// Form Key
+  final signupFormKey = GlobalKey<FormState>();
 
   /// ✅ Registration Function
   Future<void> registerUser() async {
@@ -42,17 +33,6 @@ class SignupController extends GetxController{
       final email = emailController.text.trim();
       final password = passwordController.text.trim();
       final phoneNumber = phoneNumberController.text.trim();
-
-      final isConnected = await NetworkManager.instance.isConnected();
-      if(!isConnected)  return;
-
-      ///Privacy Policy Check
-      if(!privacyPolicyController.value){
-        TLoaders.warningSnackBar(title: 'Accept Privacy Policy',
-          message: 'In order to create account, you must have to read and accept the privacy policy'
-        );
-        return;
-      }
 
       if ([firstName, lastName, username, email, password, phoneNumber]
           .any((element) => element.isEmpty)) {
@@ -85,4 +65,4 @@ class SignupController extends GetxController{
       }
     }
   }
- }
+}

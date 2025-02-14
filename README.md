@@ -1,6 +1,6 @@
 # logistic
 
-A new Flutter project.
+A fun and dynamic delivery application. Users can track their deliveries in real-time as they navigate through a maze-like route, collecting packages and avoiding obstacles. Designed for an engaging user experience, this app combines gaming elements with efficient delivery management. Built using [technologies used], it provides a unique way to interact with and optimize delivery systems.
 
 ## Getting Started
 

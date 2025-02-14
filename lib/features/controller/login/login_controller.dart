@@ -1,50 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:logistic/data/respositories/authentication/authentication_repository.dart';
-import 'package:logistic/common/network_manager.dart';
 import 'package:logistic/common/t_fullscreen_loader.dart';
 import 'package:logistic/common/t_loaders.dart';
-import 'package:logistic/features/controller/userController.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:logistic/features/screens/MyNavigator.dart';
 
 import '../userRepository.dart';
+class SignInController extends GetxController {
+  static SignInController get instance => Get.find();
 
-class LoginController extends GetxController {
-  static LoginController get instance => Get.find();
-
-  /// Variables
-  final localStorage = GetStorage();
-  final userController = Get.find<UserController>(); // Use Get.find to avoid circular dependencies
+  /// Text Controllers
   final emailController = TextEditingController();
-  final passwordController  = TextEditingController();
+  final passwordController = TextEditingController();
+
+  /// Observables
   final hidePassword = true.obs;
+  final privacyPolicy = true.obs;
   final rememberMe = true.obs;
-  GlobalKey<FormState> loginFormKey = GlobalKey<FormState>();
 
-
-  @override
-  void onInit() {
-    // email.text = localStorage.read('REMEMBER_ME_EMAIL') ?? '';
-    // password.text = localStorage.read('REMEMBER_ME_PASSWORD') ?? '';
-    super.onInit();
-  }
+  /// Form Key
+  final logInFormKey = GlobalKey<FormState>();
 
   /// ✅ Login Function
   Future<void> loginUser() async {
-
-    // Start Loading
-    TFullScreenLoader.openLoadingDialog('Logging you in...');
-
-    // Check Internet Connectivity
-    final isConnected = await NetworkManager.instance.isConnected();
-    if (!isConnected) {
-      TFullScreenLoader.stopLoading();
-      return;
-    }
-
-    if (loginFormKey.currentState!.validate()) {
+    if (logInFormKey.currentState!.validate()) {
       final email = emailController.text.trim();
       final password = passwordController.text.trim();
 
@@ -52,6 +31,8 @@ class LoginController extends GetxController {
         TLoaders.warningSnackBar(title: 'All fields are required');
         return;
       }
+
+      TFullScreenLoader.openLoadingDialog('Processing your information...');
 
       try {
         UserCredential userCredential = await FirebaseAuth.instance
@@ -79,3 +60,4 @@ class LoginController extends GetxController {
     }
   }
 }
+

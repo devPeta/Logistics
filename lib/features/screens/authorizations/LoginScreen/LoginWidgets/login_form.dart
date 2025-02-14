@@ -13,9 +13,9 @@ class LoginForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(LoginController());
+    final controller = Get.put(SignInController());
     return Form(
-          key: controller.loginFormKey,
+          key: controller.logInFormKey,
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

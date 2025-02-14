@@ -109,25 +109,21 @@ class home_appbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(UserController());
-    return  TAppBAr(
+    return  const TAppBAr(
       leadingIcon: Icons.person,
       title: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Obx(() {
-            ///Adding a shimmer loader
-            if (controller.profileLoading.value) {
-              return const TShimmerEffect(width: 80, height: 15 );
-            }
-            return Text(controller.user.value.lastName, style: const TextStyle(
+
+
+          Text('Hi, Pee', style: const TextStyle(
               color: Color(0xFFFFFFFF),
               fontSize: 20,
               fontWeight: FontWeight.bold,),
-            );
-          }),
+            ),
 
-          const Text('B2B Customer',
+
+          Text('B2B Customer',
             style: TextStyle( color: Color(0xFFFFFFFF), fontSize: 14, fontWeight: FontWeight.bold,),
           ),
               ],

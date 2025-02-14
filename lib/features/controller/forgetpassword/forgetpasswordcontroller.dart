@@ -34,7 +34,6 @@ class ForgetPasswordController extends GetxController{
       }
       
       //Send Email to reset Password
-      await AuthenticationRepository.instance.sendPasswordResetEmail(email.text.trim());
       
       //Removed Loader
       TFullScreenLoader.stopLoading();
@@ -60,8 +59,6 @@ class ForgetPasswordController extends GetxController{
         return;
       }
 
-      //Send Email to reset Password
-      await AuthenticationRepository.instance.sendPasswordResetEmail(email);
 
       //Removed Loader
       TFullScreenLoader.stopLoading();

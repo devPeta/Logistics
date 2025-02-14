@@ -6,8 +6,8 @@ import 'package:logistic/Utilities/konstant/kImages.dart';
 import '../LoginScreen/login_screen.dart';
 import '../SignUpScreen/sign_up_screen.dart';
 
-class onBoardingScreen extends StatelessWidget {
-  const onBoardingScreen({Key? key}) : super(key: key);
+class OnBoardingScreen extends StatelessWidget {
+  const OnBoardingScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

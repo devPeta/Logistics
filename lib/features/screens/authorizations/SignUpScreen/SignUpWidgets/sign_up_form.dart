@@ -111,14 +111,14 @@ class _SignUpFormState extends State<SignUpForm> {
                TextFormField(
                 controller: controller.passwordController,
                 validator: (value) => KValidator.validatePassword(value),
-                obscureText: controller.hidePasswordController.value,
+                obscureText: controller.hidePassword.value,
                 style: kTextStyle.kTextFieldTextStyle,
                 decoration: InputDecoration(
                   label: const Text(TTexts.password),
                   prefixIcon: const Icon(Icons.power_input_outlined),
                   suffixIcon: IconButton(
-                      onPressed: () => controller.hidePasswordController.value = !controller.hidePasswordController.value,
-                      icon: Icon(controller.hidePasswordController.value ?
+                      onPressed: () => controller.hidePassword.value = !controller.hidePassword.value,
+                      icon: Icon(controller.hidePassword.value ?
                       Icons.visibility_off : Icons.visibility,))
                 ),
                 keyboardType: TextInputType.visiblePassword,
